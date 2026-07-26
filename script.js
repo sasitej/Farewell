@@ -1,41 +1,58 @@
-// ==============================
+// ===============================
+// CONFIG
+// ===============================
+
+const PASSWORD = "pooja"
+
+// ===============================
 // ELEMENTS
-// ==============================
+// ===============================
 
 const passwordScreen = document.getElementById("passwordScreen");
-const unlockBtn = document.getElementById("unlockBtn");
-const passwordInput = document.getElementById("passwordInput");
-const errorMessage = document.getElementById("errorMessage");
-
-const startBtn = document.getElementById("startBtn");
 const startScreen = document.getElementById("startScreen");
 const openingScreen = document.getElementById("openingScreen");
 const bookCover = document.getElementById("bookCover");
-const book = document.querySelector(".book");
-const music = document.getElementById("bgMusic");
+const book = document.getElementById("book");
 
-// ==============================
+const unlockBtn = document.getElementById("unlockBtn");
+const startBtn = document.getElementById("startBtn");
+const openBookBtn = document.getElementById("openBookBtn");
+
+const passwordInput = document.getElementById("passwordInput");
+const errorMessage = document.getElementById("errorMessage");
+
+const bgMusic = document.getElementById("bgMusic");
+
+// ===============================
+// INITIAL STATE
+// ===============================
+
+startScreen.classList.add("hidden");
+openingScreen.classList.add("hidden");
+bookCover.classList.add("hidden");
+book.classList.add("hidden");
+
+// ===============================
 // PASSWORD
-// ==============================
-
-const PASSWORD = "journey";   // Change this to any password you like
+// ===============================
 
 unlockBtn.addEventListener("click", () => {
 
-    if (passwordInput.value === PASSWORD) {
+    if (passwordInput.value.trim() === PASSWORD) {
 
-        passwordScreen.style.display = "none";
-        errorMessage.textContent = "";
+        passwordScreen.classList.add("hidden");
+        startScreen.classList.remove("hidden");
 
     } else {
 
-        errorMessage.textContent = "Incorrect password";
+        errorMessage.textContent = "Incorrect Password";
 
     }
 
 });
 
-// Optional: Press Enter to unlock
+// Press Enter to Unlock
+
 passwordInput.addEventListener("keypress", (e) => {
 
     if (e.key === "Enter") {
@@ -44,52 +61,99 @@ passwordInput.addEventListener("keypress", (e) => {
 
 });
 
-// ==============================
+// ===============================
 // START JOURNEY
-// ==============================
+// ===============================
 
 startBtn.addEventListener("click", () => {
 
-    music.volume = 1;
-    music.play();
+    startScreen.classList.add("hidden");
 
-    startScreen.style.display = "none";
-    openingScreen.style.display = "block";
+    openingScreen.classList.remove("hidden");
+
+    bgMusic.volume = 1;
+
+    bgMusic.play().catch(() => {});
 
     setTimeout(() => {
 
-        openingScreen.style.display = "none";
+        openingScreen.classList.add("hidden");
 
-        bookCover.style.display = "flex";
-
-        setTimeout(() => {
-
-            book.classList.add("show");
-
-            // Fade out music
-            setTimeout(() => {
-
-                let fadeMusic = setInterval(() => {
-
-                    if (music.volume > 0.05) {
-
-                        music.volume -= 0.05;
-
-                    } else {
-
-                        music.volume = 0;
-                        music.pause();
-
-                        clearInterval(fadeMusic);
-
-                    }
-
-                }, 100);
-
-            }, 2000);
-
-        }, 200);
+        bookCover.classList.remove("hidden");
 
     }, 20000);
+
+});
+
+// ===============================
+// OPEN BOOK
+// ===============================
+
+openBookBtn.addEventListener("click", () => {
+
+    bookCover.classList.add("hidden");
+
+    book.classList.remove("hidden");
+
+    fadeMusic();
+
+});
+
+// ===============================
+// FADE MUSIC
+// ===============================
+
+function fadeMusic() {
+
+    let volume = bgMusic.volume;
+
+    const interval = setInterval(() => {
+
+        volume -= 0.05;
+
+        if (volume <= 0) {
+
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
+
+            clearInterval(interval);
+
+        } else {
+
+            bgMusic.volume = volume;
+
+        }
+
+    }, 200);
+
+}
+
+// ===============================
+// SCRAPBOOK NAVIGATION
+// ===============================
+
+const pages = document.querySelectorAll(".spread");
+
+const navButtons = document.querySelectorAll(".scrap-nav button");
+
+navButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        pages.forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+        const target = document.getElementById(button.dataset.target);
+
+        if (target) {
+
+            target.classList.add("active");
+
+        }
+
+    });
 
 });

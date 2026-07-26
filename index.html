@@ -1,144 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Journey Worth Remembering</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Journey Worth Remembering</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Password Screen -->
+<!-- PASSWORD SCREEN -->
 <section id="passwordScreen" class="password-screen">
-
-    <div class="password-box">
-
-        <h1>🔒 Memory Book</h1>
-
-        <p>
-            Enter the password to begin the journey.
-        </p>
-
-        <input
-            type="password"
-            id="passwordInput"
-            placeholder="Enter Password">
-
-        <button id="unlockBtn">
-            Unlock
-        </button>
-
-        <p id="errorMessage"></p>
-
-    </div>
-
+  <div class="password-box">
+    <h1>🔒 Memory Book</h1>
+    <p>Enter the password to begin the journey.</p>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button id="unlockBtn">Unlock</button>
+    <p id="errorMessage"></p>
+  </div>
 </section>
 
-    <!-- ===============================
-            HEADPHONE SCREEN
-    ================================ -->
-
-    <section id="startScreen" class="start-screen">
-
-        <div class="start-content">
-
-            <h1>🎧</h1>
-
-            <h2>For the Best Experience</h2>
-
-            <p>
-                Please wear your headphones and enjoy this little journey.
-            </p>
-
-            <button id="startBtn">
-                Begin the Journey
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-
-    <!-- ===============================
-            INTRO SCREEN
-    ================================ -->
-
-    <section id="openingScreen" class="opening-screen">
-
-        <p class="intro line1">
-            Every journey introduces us to many people...
-        </p>
-
-        <p class="intro line2">
-            Only a precious few leave behind memories,<br>
-            lessons, and a lasting impact.
-        </p>
-
-        <p class="intro line3">
-            You are one of them.
-        </p>
-
-        <p class="intro line4">
-            This isn't just a farewell...<br>
-            It's the story of the difference you made in all of us.
-        </p>
-
-    </section>
-
-
-<!-- ===============================
-        BOOK COVER
-================================ -->
-
-<section id="bookCover" class="book-cover">
-
-    <div class="book">
-
-        <h1>A Journey Worth Remembering</h1>
-
-        <p>
-            Every page holds a memory...
-        </p>
-
-        <button id="openBookBtn">
-            Open Book
-        </button>
-
-    </div>
-
+<!-- HEADPHONE SCREEN -->
+<section id="startScreen" class="start-screen hidden">
+  <div class="start-content">
+    <h1>🎧</h1>
+    <h2>For the Best Experience</h2>
+    <p>Please wear your headphones and enjoy this little journey.</p>
+    <button id="startBtn">Begin the Journey</button>
+  </div>
 </section>
 
+<!-- INTRO -->
+<section id="openingScreen" class="opening-screen hidden">
+  <p class="intro line1">Every journey introduces us to many people...</p>
+  <p class="intro line2">Only a precious few leave behind memories,<br>lessons and a lasting impact.</p>
+  <p class="intro line3">You are one of them.</p>
+  <p class="intro line4">This isn't just a farewell...<br>It's the story of the difference you made in all of us.</p>
+</section>
 
+<!-- BOOK COVER -->
+<section id="bookCover" class="book-cover hidden">
+  <div class="cover-card">
+    <h1>A Journey Worth Remembering</h1>
+    <p>Every page holds a memory...</p>
+    <button id="openBookBtn">Open Book</button>
+  </div>
+</section>
 
+<!-- SCRAPBOOK -->
+<main id="book" class="scrapbook hidden">
 
+<section class="spread active" id="page-home">
+<div class="page left">
+<div class="paper">
+<div class="polaroid">
+<img src="images/mentor.jpg" alt="Mentor">
+<span>Good times, great people!</span>
+</div>
+</div>
+</div>
 
+<div class="page right">
+<div class="paper">
+<h1>Some people come into our lives and leave a beautiful imprint forever.</h1>
+<p>
+Thank you for your guidance, patience, encouragement and constant support.
+Every page in this scrapbook is a small reminder of the impact you made on all of us.
+</p>
+<div class="sticky-note">
+<strong>Thank You ❤️</strong>
+</div>
+</div>
+</div>
+</section>
 
+<section class="spread" id="page-journey">
+<h2>Journey</h2>
+<p>Timeline and milestones go here.</p>
+</section>
 
+<section class="spread" id="page-appreciation">
+<h2>Appreciation</h2>
+<p>Messages from the team.</p>
+</section>
 
-    <!-- ===============================
-            AUDIO
-    ================================ -->
+<section class="spread" id="page-videos">
+<h2>Videos</h2>
+<p>Embedded farewell videos.</p>
+</section>
 
-    <audio id="bgMusic">
+<section class="spread" id="page-memories">
+<h2>Memories</h2>
+<p>Photos and memorable moments.</p>
+</section>
 
-        <source
-            src="music/intro_music.mp3"
-            type="audio/mpeg">
+<section class="spread" id="page-impact">
+<h2>Impact</h2>
+<p>Your achievements and influence.</p>
+</section>
 
-    </audio>
+<section class="spread" id="page-wishes">
+<h2>Best Wishes</h2>
+<p>Heartfelt farewell wishes.</p>
+</section>
 
+<nav class="scrap-nav">
+<button data-target="page-home">Home</button>
+<button data-target="page-journey">Journey</button>
+<button data-target="page-appreciation">Appreciation</button>
+<button data-target="page-videos">Videos</button>
+<button data-target="page-memories">Memories</button>
+<button data-target="page-impact">Impact</button>
+<button data-target="page-wishes">Wishes</button>
+</nav>
 
+</main>
 
+<audio id="bgMusic">
+<source src="music/intro_music.mp3" type="audio/mpeg">
+</audio>
 
-
-    <!-- ===============================
-            JAVASCRIPT
-    ================================ -->
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
