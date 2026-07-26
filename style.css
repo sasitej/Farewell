@@ -206,3 +206,95 @@ flex-direction:column;
 }
 
 }
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    body{
+        overflow-x:hidden;
+        overflow-y:auto;
+    }
+
+    .scrapbook{
+        padding:15px;
+        height:auto;
+    }
+
+    .spread{
+        width:100%;
+        height:auto;
+        flex-direction:column;
+        padding:12px;
+        border-radius:18px;
+    }
+
+    .page{
+        width:100%;
+        padding:8px;
+    }
+
+    .paper{
+        padding:20px;
+    }
+
+    .polaroid{
+        width:90%;
+        max-width:320px;
+        margin:0 auto 25px;
+        transform:rotate(-3deg);
+    }
+
+    .polaroid img{
+        width:100%;
+        height:auto;
+    }
+
+    .paper h1{
+        font-size:2rem;
+        line-height:1.4;
+        text-align:center;
+    }
+
+    .paper p{
+        font-size:1rem;
+        line-height:1.8;
+        text-align:center;
+    }
+
+    .sticky-note{
+
+        position:relative;
+        right:auto;
+        bottom:auto;
+
+        margin:30px auto 10px;
+
+        transform:rotate(3deg);
+    }
+
+    .scrap-nav{
+
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+
+        gap:10px;
+
+        width:100%;
+
+        margin-top:20px;
+    }
+
+    .scrap-nav button{
+
+        width:100%;
+        margin:0;
+
+        padding:14px;
+
+        font-size:15px;
+    }
+
+}
