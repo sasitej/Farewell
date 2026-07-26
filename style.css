@@ -309,3 +309,108 @@ opacity:1;
 transform:translateY(0) scale(1);
 
 }
+
+/* =========================
+   PASSWORD SCREEN
+========================= */
+
+.password-screen{
+
+    position:fixed;
+    inset:0;
+
+    background:#111;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.password-box{
+
+    width:420px;
+
+    background:#fffdf7;
+
+    padding:45px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.password-box h1{
+
+    margin-bottom:20px;
+
+    color:#5a3e2b;
+
+}
+
+.password-box p{
+
+    margin-bottom:25px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+.password-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:2px solid #d7c4a8;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    outline:none;
+
+    margin-bottom:20px;
+
+}
+
+.password-box button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#8b5e3c;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.password-box button:hover{
+
+    background:#6f4729;
+
+}
+
+#errorMessage{
+
+    color:red;
+
+    margin-top:15px;
+
+}
