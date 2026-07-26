@@ -240,29 +240,29 @@ flex-direction:column;
         padding:20px;
     }
 
-    .polaroid{
-        width:90%;
-        max-width:320px;
-        margin:0 auto 25px;
-        transform:rotate(-3deg);
-    }
+.polaroid{
+    width:80%;
+    max-width:260px;
+    margin:0 auto 20px;
+}
 
     .polaroid img{
         width:100%;
         height:auto;
     }
 
-    .paper h1{
-        font-size:2rem;
-        line-height:1.4;
-        text-align:center;
-    }
+.paper h1{
+    font-size:1.5rem;
+    line-height:1.5;
+    text-align:center;
+    margin-bottom:20px;
+}
 
-    .paper p{
-        font-size:1rem;
-        line-height:1.8;
-        text-align:center;
-    }
+.paper p{
+    font-size:0.95rem;
+    line-height:1.6;
+    text-align:center;
+}
 
     .sticky-note{
 
@@ -275,26 +275,23 @@ flex-direction:column;
         transform:rotate(3deg);
     }
 
-    .scrap-nav{
+.scrap-nav{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:10px 0;
+    flex-wrap:nowrap;
+    scrollbar-width:none;
+}
 
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
+.scrap-nav::-webkit-scrollbar{
+    display:none;
+}
 
-        gap:10px;
-
-        width:100%;
-
-        margin-top:20px;
-    }
-
-    .scrap-nav button{
-
-        width:100%;
-        margin:0;
-
-        padding:14px;
-
-        font-size:15px;
-    }
+.scrap-nav button{
+    flex:0 0 auto;
+    min-width:130px;
+    padding:12px 18px;
+}
 
 }
