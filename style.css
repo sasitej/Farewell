@@ -122,14 +122,30 @@ button:hover{
 }
 
 .spread{
- width:1100px;
+
+    width:1100px;
     height:640px;
+
     display:none;
+
     background:#6b4f37;
+
     border-radius:18px;
+
     padding:18px;
+
     box-shadow:0 20px 45px rgba(0,0,0,.45);
+
     position:relative;
+
+    opacity:0;
+
+    transform:scale(.96);
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease;
+
 }
 .spread::after{
     content:"";
@@ -143,13 +159,53 @@ button:hover{
 }
 
 .spread.active{
+
     display:flex;
+
+    opacity:1;
+
+    transform:scale(1);
+
 }
+
+.spread.leaving{
+
+    opacity:0;
+
+    transform:
+        scale(.95)
+        rotate(-2deg);
+
+}
+
+.spread.entering{
+
+    opacity:0;
+
+    transform:
+        scale(1.03)
+        rotate(2deg);
+
+}
+
+.book-pages{
+
+    display:flex;
+
+    width:100%;
+    height:100%;
+
+    transform-style:preserve-3d;
+
+}
+
 
 .page{
     flex:1;
     padding:15px;
 }
+
+
 
 
 

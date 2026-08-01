@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Journey Worth Remembering</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <!-- PASSWORD SCREEN -->
 <section id="passwordScreen" class="password-screen">
-  <div class="password-box">
-    <h1>🔒 Memory Book</h1>
-    <p>Enter the password to begin the journey.</p>
-    <input type="password" id="passwordInput" placeholder="Enter Password">
-    <button id="unlockBtn">Unlock</button>
-    <p id="errorMessage"></p>
-  </div>
+    <div class="password-box">
+
+        <h1>🔒 Memory Book</h1>
+
+        <p>Enter the password to begin the journey.</p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter Password">
+
+        <button id="unlockBtn">Unlock</button>
+
+        <p id="errorMessage"></p>
+
+    </div>
 </section>
 
 <!-- HEADPHONE SCREEN -->
 <section id="startScreen" class="start-screen hidden">
-  <div class="start-content">
-    <h1>🎧</h1>
-    <h2>For the Best Experience</h2>
-    <p>Please wear your headphones and enjoy this little journey.</p>
-    <button id="startBtn">Begin the Journey</button>
-  </div>
+
+    <div class="start-content">
+
+        <h1>🎧</h1>
+
+        <h2>For the Best Experience</h2>
+
+        <p>Please wear your headphones and enjoy this little journey.</p>
+
+        <button id="startBtn">Begin the Journey</button>
+
+    </div>
+
 </section>
 
 <!-- INTRO -->
@@ -39,119 +58,177 @@
 
 <!-- BOOK COVER -->
 <section id="bookCover" class="book-cover hidden">
-  <div class="cover-card">
-    <h1>A Journey Worth Remembering</h1>
-    <p>Every page holds a memory...</p>
-    <button id="openBookBtn">Open Book</button>
-  </div>
+
+    <div class="cover-card">
+
+        <h1>A Journey Worth Remembering</h1>
+
+        <p>Every page holds a memory...</p>
+
+        <button id="openBookBtn">Open Book</button>
+
+    </div>
+
 </section>
 
 <!-- SCRAPBOOK -->
 <main id="book" class="scrapbook hidden">
 
-<section class="spread active" id="page-home">
-<div class="page left">
-    <div class="paper">
+    <!-- ================= HOME ================= -->
 
-        <!-- Small handwritten date -->
-        <div class="page-date">Memories</div>
+    <section class="spread active" id="page-home">
 
-        <div class="polaroid">
+        <div class="book-pages">
 
-            <div class="tape tape-left"></div>
-            <div class="tape tape-right"></div>
+            <!-- LEFT PAGE -->
 
-            <img src="images/mentor.jpg" alt="Mentor">
+            <div class="page left">
 
-            <span>Good times, great people!</span>
+                <div class="paper">
+
+                    <div class="page-date">Memories</div>
+
+                    <div class="polaroid">
+
+                        <div class="tape tape-left"></div>
+                        <div class="tape tape-right"></div>
+
+                        <img src="images/mentor.jpg" alt="Mentor">
+
+                        <span>Good times, great people!</span>
+
+                    </div>
+
+                    <div class="flower">
+                        <img src="images/flower.png" alt="flower">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT PAGE -->
+
+            <div class="page right">
+
+                <div class="paper">
+
+                    <div class="page-number">Page 01</div>
+
+                    <h1>
+                        Some people come into our lives and leave a beautiful imprint forever.
+                    </h1>
+
+                    <div class="doodle">
+                        <img src="images/divider.png" alt="divider">
+                    </div>
+
+                    <p class="intro-text">
+                        Thank you for your guidance, patience, encouragement and constant support.
+                        Every page in this scrapbook is a small reminder of the impact you made
+                        on all of us.
+                    </p>
+
+                    <div class="sticky-note">
+
+                        <div class="sticky-tape"></div>
+
+                        <strong>Thank You ❤️</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <!-- Decorative pressed flower -->
-        <div class="flower">
-            <img src="images/flower.png" alt="flower">
-        </div>
+    </section>
 
-    </div>
-</div>
+    <!-- JOURNEY -->
 
-<div class="page right">
+    <section class="spread" id="page-journey">
 
-    <div class="paper">
+        <h2>Journey</h2>
 
-        <div class="page-number">Page 01</div>
+        <p>Timeline and milestones go here.</p>
 
-        <h1>
-            Some people come into our lives and leave a beautiful imprint forever.
-        </h1>
+    </section>
 
-        <div class="doodle">
-            <img src="images/divider.png" alt="divider">
-        </div>
+    <!-- APPRECIATION -->
 
-        <p class="intro-text">
-            Thank you for your guidance, patience, encouragement and constant support.
-            Every page in this scrapbook is a small reminder of the impact you made
-            on all of us.
-        </p>
+    <section class="spread" id="page-appreciation">
 
-        <div class="sticky-note">
+        <h2>Appreciation</h2>
 
-            <div class="sticky-tape"></div>
+        <p>Messages from the team.</p>
 
-            <strong>Thank You ❤️</strong>
+    </section>
 
-        </div>
+    <!-- VIDEOS -->
 
-    </div>
+    <section class="spread" id="page-videos">
 
-</div>
-</section>
+        <h2>Videos</h2>
 
-<section class="spread" id="page-journey">
-<h2>Journey</h2>
-<p>Timeline and milestones go here.</p>
-</section>
+        <p>Embedded farewell videos.</p>
 
-<section class="spread" id="page-appreciation">
-<h2>Appreciation</h2>
-<p>Messages from the team.</p>
-</section>
+    </section>
 
-<section class="spread" id="page-videos">
-<h2>Videos</h2>
-<p>Embedded farewell videos.</p>
-</section>
+    <!-- MEMORIES -->
 
-<section class="spread" id="page-memories">
-<h2>Memories</h2>
-<p>Photos and memorable moments.</p>
-</section>
+    <section class="spread" id="page-memories">
 
-<section class="spread" id="page-impact">
-<h2>Impact</h2>
-<p>Your achievements and influence.</p>
-</section>
+        <h2>Memories</h2>
 
-<section class="spread" id="page-wishes">
-<h2>Best Wishes</h2>
-<p>Heartfelt farewell wishes.</p>
-</section>
+        <p>Photos and memorable moments.</p>
 
-<nav class="scrap-nav">
-<button data-target="page-home">Home</button>
-<button data-target="page-journey">Journey</button>
-<button data-target="page-appreciation">Appreciation</button>
-<button data-target="page-videos">Videos</button>
-<button data-target="page-memories">Memories</button>
-<button data-target="page-impact">Impact</button>
-<button data-target="page-wishes">Wishes</button>
-</nav>
+    </section>
+
+    <!-- IMPACT -->
+
+    <section class="spread" id="page-impact">
+
+        <h2>Impact</h2>
+
+        <p>Your achievements and influence.</p>
+
+    </section>
+
+    <!-- WISHES -->
+
+    <section class="spread" id="page-wishes">
+
+        <h2>Best Wishes</h2>
+
+        <p>Heartfelt farewell wishes.</p>
+
+    </section>
+
+    <!-- NAVIGATION -->
+
+    <nav class="scrap-nav">
+
+        <button data-target="page-home">Home</button>
+
+        <button data-target="page-journey">Journey</button>
+
+        <button data-target="page-appreciation">Appreciation</button>
+
+        <button data-target="page-videos">Videos</button>
+
+        <button data-target="page-memories">Memories</button>
+
+        <button data-target="page-impact">Impact</button>
+
+        <button data-target="page-wishes">Wishes</button>
+
+    </nav>
 
 </main>
 
 <audio id="bgMusic">
-<source src="music/intro_music.mp3" type="audio/mpeg">
+    <source src="music/intro_music.mp3" type="audio/mpeg">
 </audio>
 
 <script src="script.js"></script>

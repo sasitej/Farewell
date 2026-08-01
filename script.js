@@ -188,19 +188,40 @@ navButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        pages.forEach(page => {
+        const current = document.querySelector(".spread.active");
+        const next = document.getElementById(button.dataset.target);
 
-            page.classList.remove("active");
+        if (!next || current === next) return;
 
-        });
+        /* Start leaving animation */
 
-        const target = document.getElementById(button.dataset.target);
+        current.classList.add("leaving");
 
-        if (target) {
+        setTimeout(() => {
 
-            target.classList.add("active");
+            current.classList.remove("active");
+            current.classList.remove("leaving");
 
-        }
+            next.classList.add("active");
+            next.classList.add("entering");
+
+            requestAnimationFrame(() => {
+
+                next.style.opacity = "1";
+                next.style.transform = "scale(1) rotate(0deg)";
+
+            });
+
+            setTimeout(() => {
+
+                next.classList.remove("entering");
+
+                next.style.opacity = "";
+                next.style.transform = "";
+
+            },650);
+
+        },650);
 
     });
 
