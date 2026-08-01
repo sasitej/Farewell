@@ -73,29 +73,38 @@ button:hover{
 }
 
 /* Intro */
+/* Intro */
 
 .opening-screen{
+    position:fixed;
+    inset:0;
     background:#000;
-    flex-direction:column;
-    text-align:center;
-    padding:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
 }
 
 .intro{
-    max-width:800px;
-    margin:18px 0;
-    font-size:2rem;
+
+    width:80%;
+    max-width:900px;
+
+    color:#ffffff;
+
+    font-size:2.3rem;
+    line-height:1.6;
+
+    text-align:center;
+
     opacity:0;
-    animation:fadeIn 2s forwards;
-}
 
-.line2{animation-delay:4s;}
-.line3{animation-delay:8s;}
-.line4{animation-delay:12s;}
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
 
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
+    transform:translateY(30px);
+
 }
 
 /* Scrapbook */

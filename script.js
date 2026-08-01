@@ -22,6 +22,7 @@ const passwordInput = document.getElementById("passwordInput");
 const errorMessage = document.getElementById("errorMessage");
 
 const bgMusic = document.getElementById("bgMusic");
+const introText = document.getElementById("introText");
 
 // ===============================
 // INITIAL STATE
@@ -65,6 +66,18 @@ passwordInput.addEventListener("keypress", (e) => {
 // START JOURNEY
 // ===============================
 
+const introLines = [
+
+    "Every journey introduces us to many people...",
+
+    "Only a precious few leave behind memories,<br>lessons and a lasting impact.",
+
+    "You are one of them.",
+
+    "This isn't just a farewell...<br>It's the story of the difference you made in all of us."
+
+];
+
 startBtn.addEventListener("click", () => {
 
     startScreen.classList.add("hidden");
@@ -75,13 +88,48 @@ startBtn.addEventListener("click", () => {
 
     bgMusic.play().catch(() => {});
 
-    setTimeout(() => {
+    let index = 0;
 
-        openingScreen.classList.add("hidden");
+    function showNextLine(){
 
-        bookCover.classList.remove("hidden");
+        if(index >= introLines.length){
 
-    }, 20000);
+            openingScreen.classList.add("hidden");
+
+            bookCover.classList.remove("hidden");
+
+            return;
+
+        }
+
+        introText.style.opacity = "0";
+
+        introText.style.transform = "translateY(30px)";
+
+        setTimeout(()=>{
+
+            introText.innerHTML = introLines[index];
+
+            introText.style.opacity = "1";
+
+            introText.style.transform = "translateY(0)";
+
+            index++;
+
+            setTimeout(()=>{
+
+                introText.style.opacity = "0";
+
+                introText.style.transform = "translateY(-20px)";
+
+                setTimeout(showNextLine,1200);
+
+            },2800);
+
+        },300);
+
+    }
+    showNextLine();
 
 });
 
