@@ -2,7 +2,7 @@
 // CONFIG
 // ===============================
 
-const PASSWORD = "pooja"
+const PASSWORD = "September"
 
 // ===============================
 // ELEMENTS
