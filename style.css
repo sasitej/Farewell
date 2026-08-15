@@ -834,6 +834,210 @@ flex-direction:column;
 
 }
 
+/* ==========================================================
+                   WISHES PAGE
+========================================================== */
+
+#wishes-left-page,
+#wishes-right-page{
+    position:relative;
+}
+
+/* LEFT PAGE */
+
+.wishes-left{
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.wishes-heart{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+}
+
+.wishes-title{
+
+    font-family:cursive;
+
+    font-size:2.2rem;
+
+    color:#4a2f21;
+
+    margin-bottom:20px;
+
+}
+
+.wishes-divider{
+
+    color:#b98957;
+
+    font-size:1.2rem;
+
+    margin-bottom:25px;
+
+}
+
+.wishes-message{
+
+    width:85% !important;
+
+    padding:0 !important;
+
+    margin:0 auto 18px !important;
+
+    font-size:1.05rem !important;
+
+    line-height:1.8 !important;
+
+    color:#4d382a;
+
+}
+
+
+/* RIGHT PAGE */
+
+.wishes-right{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.wishes-envelope{
+
+    font-size:4rem;
+
+    margin-bottom:15px;
+
+}
+
+.wishes-right h2{
+
+    font-family:cursive;
+
+    font-size:2rem;
+
+    color:#4a2f21;
+
+    line-height:1.3;
+
+    margin-bottom:18px;
+
+}
+
+.wishes-right p{
+
+    width:80% !important;
+
+    padding:0 !important;
+
+    margin:0 auto 20px !important;
+
+    font-size:1.05rem !important;
+
+    line-height:1.7 !important;
+
+    color:#4d382a;
+
+}
+
+.wishes-line{
+
+    width:120px;
+
+    height:2px;
+
+    background:#c8b08a;
+
+    margin:5px auto 25px;
+
+}
+
+
+/* WISHES BUTTON */
+
+.wishes-button{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#7a5840;
+
+    color:white;
+
+    padding:15px 28px;
+
+    border-radius:40px;
+
+    font-family:Georgia,serif;
+
+    font-size:1rem;
+
+    box-shadow:0 6px 12px rgba(0,0,0,.20);
+
+    transition:.3s;
+
+}
+
+.wishes-button:hover{
+
+    background:#5f422f;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* SMALL NOTE */
+
+.wishes-note{
+
+    margin-top:22px;
+
+    width:75%;
+
+    padding:12px 16px;
+
+    background:#fff8dc;
+
+    color:#6a4b36;
+
+    font-size:.9rem;
+
+    line-height:1.5;
+
+    transform:rotate(-1deg);
+
+    box-shadow:0 5px 12px rgba(0,0,0,.12);
+
+}
+
 /* ==========================================
    MOBILE RESPONSIVE
 ========================================== */
