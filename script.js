@@ -23,6 +23,7 @@ const errorMessage = document.getElementById("errorMessage");
 
 const bgMusic = document.getElementById("bgMusic");
 const introText = document.getElementById("introText");
+const skipIntroBtn = document.getElementById("skipIntroBtn");
 
 // ===============================
 // INITIAL STATE
@@ -78,6 +79,10 @@ const introLines = [
 
 ];
 
+let introIndex = 0;
+let introTimeout;
+let skipIntro = false;
+
 startBtn.addEventListener("click", () => {
 
     startScreen.classList.add("hidden");
@@ -88,48 +93,73 @@ startBtn.addEventListener("click", () => {
 
     bgMusic.play().catch(() => {});
 
-    let index = 0;
+    introIndex = 0;
+    skipIntro = false;
 
-    function showNextLine(){
+    showNextLine();
 
-        if(index >= introLines.length){
+});
 
-            openingScreen.classList.add("hidden");
 
-            bookCover.classList.remove("hidden");
+function showNextLine(){
 
-            return;
+    if(skipIntro) return;
 
-        }
+    if(introIndex >= introLines.length){
 
-        introText.style.opacity = "0";
+        openingScreen.classList.add("hidden");
 
-        introText.style.transform = "translateY(30px)";
+        bookCover.classList.remove("hidden");
 
-        setTimeout(()=>{
-
-            introText.innerHTML = introLines[index];
-
-            introText.style.opacity = "1";
-
-            introText.style.transform = "translateY(0)";
-
-            index++;
-
-            setTimeout(()=>{
-
-                introText.style.opacity = "0";
-
-                introText.style.transform = "translateY(-20px)";
-
-                setTimeout(showNextLine,1200);
-
-            },2800);
-
-        },300);
+        return;
 
     }
-    showNextLine();
+
+    introText.style.opacity = "0";
+    introText.style.transform = "translateY(30px)";
+
+    introTimeout = setTimeout(() => {
+
+        if(skipIntro) return;
+
+        introText.innerHTML = introLines[introIndex];
+
+        introText.style.opacity = "1";
+        introText.style.transform = "translateY(0)";
+
+        introIndex++;
+
+        introTimeout = setTimeout(() => {
+
+            if(skipIntro) return;
+
+            introText.style.opacity = "0";
+            introText.style.transform = "translateY(-20px)";
+
+            introTimeout = setTimeout(showNextLine,1200);
+
+        },2800);
+
+    },300);
+
+}
+
+
+// ===============================
+// SKIP INTRO
+// ===============================
+
+skipIntroBtn.addEventListener("click", () => {
+
+    skipIntro = true;
+
+    clearTimeout(introTimeout);
+
+    introText.style.opacity = "0";
+
+    openingScreen.classList.add("hidden");
+
+    bookCover.classList.remove("hidden");
 
 });
 

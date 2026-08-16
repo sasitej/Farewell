@@ -107,6 +107,53 @@ button:hover{
 
 }
 
+/* ===============================
+   SKIP INTRO BUTTON
+================================ */
+
+.skip-intro-btn{
+
+    position:absolute;
+
+    bottom:35px;
+    right:40px;
+
+    margin:0;
+
+    padding:9px 18px;
+
+    background:transparent;
+
+    color:rgba(255,255,255,.75);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:25px;
+
+    font-family:Georgia,serif;
+
+    font-size:.9rem;
+
+    letter-spacing:.3px;
+
+    box-shadow:none;
+
+    transition:.3s;
+
+}
+
+.skip-intro-btn:hover{
+
+    background:rgba(255,255,255,.10);
+
+    color:#fff;
+
+    border-color:rgba(255,255,255,.7);
+
+    transform:translateY(-2px);
+
+}
+
 /* Scrapbook */
 
 .scrapbook{
