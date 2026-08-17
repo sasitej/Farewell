@@ -90,6 +90,7 @@ startBtn.addEventListener("click", () => {
     openingScreen.classList.remove("hidden");
 
     bgMusic.volume = 1;
+    bgMusic.currentTime = 37;
 
     bgMusic.play().catch(() => {});
 
@@ -138,9 +139,9 @@ function showNextLine(){
 
             introTimeout = setTimeout(showNextLine,1200);
 
-        },2800);
+        },3000);
 
-    },300);
+    },400);
 
 }
 
